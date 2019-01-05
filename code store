@@ -74,3 +74,115 @@ public class Hello {
 }
 
 q2.
+The program must accept a string S and an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output section.
+
+Boundary Condition(s):
+2 <= Length of S <= 100
+2 <= N <= Length of S
+
+Input Format:
+The first line contains the string S.
+The second line contains the integer N.
+
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+Input:
+abcdefghijk
+3
+
+Output:
+a
+*b
+**c
+*d
+e
+*f
+**g
+*h
+i
+*j
+**k
+
+Example Input/Output 2:
+Input:
+accelerate
+8
+
+Output:
+a
+*c
+**c
+***e
+****l
+*****e
+******r
+*******a
+******t
+*****e
+
+solution:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pattern;
+
+/**
+ *
+ * @author shubham kumar
+ */
+public class Pattern {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String c="shubhamkumar";
+        boolean flag=false;
+        int n=3;
+        int p=0;
+        int z;
+        for(int h=0;h<c.length()/n;h++){
+            if(h>0){
+                z=1;
+            }else{
+                z=0;
+            }
+        for(int i=z;i<n;i++){
+            String s="";
+            for(int j=0;j<i;j++){
+                s+="*";
+            }
+            if(p>c.length()-1){
+                flag =true;
+                break;
+            }
+            System.out.println(s+c.charAt(p++));
+            
+        }
+        for(int i=n-1;i>0;i--){
+            String s="";
+            for(int j=0;j<i-1;j++){
+                s+="*";
+            }
+            if(p>c.length()-1){
+                flag =true;
+                break;
+            }
+            System.out.println(s+c.charAt(p++));
+            }
+        
+            if(flag){
+            break;
+        
+            }
+        }
+        }
+        
+    }
+    
+}
